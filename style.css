@@ -1,0 +1,1063 @@
+/* Root variables for light and dark modes */
+:root {
+    --base-color: white; /* Background color for light mode */
+    --base-variant: #e8e9ed; /* Lighter variant for light mode */
+    --text-color: black; /* Text color for light mode */
+    --primary-color: rgb(210, 210, 210); /* Default primary color */
+    --accent-color: #315cfd; /* Accent color for highlights */
+    --accent2-color: rgb(210, 210, 210);
+    --background-color: white;
+    --navbar-color: white;
+}
+
+/* Dark mode variables */
+.darkmode {
+    --base-color: #070b1d; /* Background color for dark mode */
+    --base-variant: #101425; /* Lighter variant for dark mode */
+    --text-color: white; /* Text color for dark mode */
+    --primary-color: rgb(210, 210, 210); /* Default primary color */
+    --accent-color: #315cfd; /* Accent color for dark mode */
+    --accent2-color: #070b1d;
+    --background-color: #121212;
+    --navbar-color: #282828;
+}
+
+/* Universal reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Text styles */
+h1, h2, h3, h5, h6, p {
+    color: var(--text-color);
+}
+
+h1 {
+    font-size: 50px;
+    line-height: 64px;
+}
+
+h2 {
+    font-size: 46px;
+    line-height: 54px;
+}
+
+h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+h6 {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+p {
+    font-size: 16px;
+    margin: 15px 0 20px 0;
+}
+
+/* Section padding */
+.section-p1 {
+    padding: 40px 80px;
+}
+
+.section-m1 {
+    margin: 40px 0;
+}
+
+body {
+    width: 100%;
+    background-color: var(--background-color);
+}
+
+/* Header styles */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 80px;
+    background-color: var(--navbar-color);
+    box-shadow: 0 6px 15px var(--primary-color);
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+/* Navigation */
+#nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    position: relative;
+}
+
+#nav li {
+    list-style: none;
+    padding: 0 20px;
+}
+
+#nav li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 15px;
+    transition: 0.8s ease;
+}
+
+#nav li a:hover {
+    color: var(--accent-color);
+}
+
+/* User actions */
+.user-actions {
+    display: flex;
+    margin-left: auto;
+    gap: 10px;
+}
+
+.log, .sign {
+    padding: 10px 15px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.log {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    text-decoration:none;
+}
+
+.sign {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    text-decoration: none; /* Remove underline */
+}
+
+.log:hover, .sign:hover {
+    background-color: var(--primary-color);
+    color: var(--base-color);
+    text-decoration: none; /* Ensure no underline on hover */
+}
+
+
+/* Hero banner */
+#herobanner {
+    color: var(--text-color);
+    background-image: url("img/hero1.png");
+    height: 80vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 25% right 0;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#herobanner button {
+    width: 160px;
+    height: 60px;
+    border: 3px solid var(--accent-color);
+    border-radius: 50px;
+    transition: all 0.3s;
+    cursor: pointer;
+    background: white;
+    font-size: 1.2em;
+    font-weight: 350;
+}
+
+#herobanner button:hover {
+    background: var(--accent-color);
+    color: white;
+    font-size: 1.5em;
+}
+
+/* Footer styles */
+footer {
+    background: var(--navbar-color);
+    padding-top: 50px;
+    color: var(--base-color);
+    text-decoration: none; /* Remove underline in footer */
+}
+
+.container {
+    width: 1140px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-content {
+    width: 33.3%;
+}
+
+.footer-content ul {
+    text-align: center;
+}
+
+.list {
+    padding: 0;
+}
+
+.list li {
+    width: auto;
+    text-align: center;
+    list-style-type: none;
+    padding: 7px;
+    position: relative;
+}
+
+.list li::before {
+    content: '';
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 100%;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition-duration: .5s;
+    text-decoration: none; /* Ensure no underline on list items */
+}
+
+/* Ensure no underline in links */
+footer a {
+    text-decoration: none; /* Remove underline from all links in footer */
+    color: var(--text-color); /* Ensure links have the base color */
+}
+
+footer a:visited {
+    color:var(--text-color);/* Maintain the same color for visited links */
+}
+
+.list li:hover::before {
+    width: 20%; /* On hover, expand the line */
+}
+
+
+.media-icons {
+    text-align: center;
+    padding: 0;
+}
+
+.media-icons li {
+    display: inline-block;
+    padding: 5px;
+}
+
+.media-icons i {
+    color: var(--text-color);
+    font-size: 25px;
+}
+
+.media-icons i:hover {
+    color: var(--accent-color);
+}
+
+/* Contact form styles */
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 50px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--navbar-color);
+}
+
+.contact-form h1 {
+    text-align: center;
+    font-size: 26px;
+}
+
+/* Theme switch button */
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#theme-switch:hover {
+    background-color: var(--primary-color);
+}
+
+#theme-switch svg {
+    fill: var(--text-color);
+    transition: fill 0.3s ease;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+    display: block;
+}
+
+.contact-form p {
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form #Name,
+.contact-form #email,
+.contact-form input[type="submit"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    background-color: var(--primary-color);
+    transition: border-color 0.3s ease;
+}
+
+.contact-form #Name:focus,
+.contact-form #email:focus,
+.contact-form textarea:focus {
+    border-color: var(--text-color); /* Focus border color */
+    outline: none;
+}
+
+.contact-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+.contact-form input[type="submit"] {
+    background-color: var(--primary-color);
+    color: var(--base-color);
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.log-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 50px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--base-variant);
+}
+.log-form h1 {
+    text-align: center;
+    font-size: 26px;
+    color: #000;
+}
+ 
+.log-form p {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+ 
+.log-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+ 
+.log-form #email,
+.log-form #password,
+.log-form input[type="submit"],
+.log-form a {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+ 
+.log-form #email:focus,
+.log-form #password:focus {
+    border-color: #555;
+}
+ 
+.log-form button {
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+ 
+.log-form input[type="submit"]:hover {
+    background-color: #333;
+}
+ 
+.log-form a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    border: none;
+    padding: 12px;
+    font-size: 16px
+}
+.log-form .a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+}
+.log-form .log-button {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+ 
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    padding: 8px 15px;
+    border-radius: 30px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+}
+ 
+#searchInput {
+    width: 200px;
+    padding: 8px 15px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    outline: none;
+}
+ 
+#searchInput:focus {
+    border-color: #315cfd;
+}
+ 
+#searchBtn {
+    background-color: #315cfd;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+ 
+#searchBtn:hover {
+    background-color: #2a4dc7;
+}
+.sign-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 50px;
+    padding: 20px;
+    border-radius: 8px;
+}
+ 
+.sign-form h1 {
+    text-align: center;
+    font-size: 26px;
+    color: #000;
+}
+ 
+.sign-form p {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+ 
+.sign-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+ 
+.sign-form #Name,
+.sign-form #Email,
+.sign-form #button,
+.sign-form #Password,
+.sign-form #password_confirmation,
+.sign-form input[type="Sign Up"],
+ 
+.sign-form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    transition: border-color 0.3
+ 
+}
+.sign-form .a {
+    display: inline-bl.log-formock;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+ 
+}
+ 
+#order-summary {
+    margin: 20px 50px;
+}
+
+.order-summary-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.order-item img {
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+.order-item-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.order-item-quantity,
+.order-item-price {
+    font-weight: bold;
+}
+
+.text543{
+    margin-left: 50px;
+}
+
+/* product */
+
+#products {
+    text-align: center;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.product-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.product-card {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid var(--navbar-color);
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 1px rgba(0, 0, 0, 0.1); /* Card shadow effect */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover animation */
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+.product-card p {
+    color: var(--accent-color);
+    margin: 10px 0;
+}
+
+.product-card .price {
+    font-weight: bold;
+    color: var(--text-color); /* Price text in accent color */
+}
+
+.product-card button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #315cfd;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+ 
+.product-card button:hover {
+    background-color: #2a4dc7;
+}
+ 
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+.size-buttons {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+ 
+.size {
+    padding: 8px 16px;
+    border: 2px solid #315cfd !important;
+    border-radius: 20px;
+    background-color: white !important;
+    color: #315cfd !important; /* Button text color */
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+ 
+.size:hover {
+    background-color: rgb(232, 232, 232)  !important; /* Button background on hover */
+    color: white; /* Button text color on hover */
+}
+ 
+.size.selected {
+    background-color: #315cfd !important; /* Highlighted background */
+    color: white !important; /* Text color when selected */
+    border: 2px solid #315cfd !important; /* Consistent border */
+}
+
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Adds pointer cursor for better UX */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+    position: absolute; /* Position it absolute to the navbar */
+    right: -40px; 
+    top: 50%; /* Vertically center it inside the navbar */
+    transform: translateY(-50%); /* Adjust for exact vertical centering */
+}
+
+#theme-switch:hover {
+    background-color: var(--primary-color); /* Changes to accent color on hover */
+}
+
+#theme-switch svg {
+    fill: var(--text-color); /* Default icon color */
+    transition: fill 0.3s ease; /* Smooth icon color change on hover */
+}
+
+#theme-switch:hover svg {
+    fill: var(--text-color); /* Changes icon color on hover */
+}
+
+#theme-switch svg:last-child {
+    display: none; /* Hides dark mode icon in light mode */
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none; /* Hides light mode icon in dark mode */
+}
+
+.darkmode #theme-switch svg:last-child {
+    display: block; /* Shows dark mode icon when dark mode is active */
+}
+
+/* Ensure that navbar items don't move */
+#nav {
+    display: flex;
+    justify-content: space-between; /* Spread out the items */
+    align-items: center; /* Vertically center the items */
+    position: relative; /* Needed for the absolute positioning of the theme switch button */
+}
+
+#nav li {
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+}
+
+/* About Us page */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+ 
+body {
+    background-color: var(--background-color);
+    color: #333;
+    line-height: 1.6;
+}
+ 
+ 
+.aboutus-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 50px auto;
+    width: 90%;
+    max-width: 1200px;
+    overflow-x: hidden;
+}
+ 
+ 
+.aboutcard {
+    flex: 1 1 calc(33.333% - 20px);
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+ 
+ 
+.aboutcard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+ 
+ 
+.aboutcard img {
+    width: 100%;
+    height: auto;
+}
+ 
+ 
+.aboutcard-content {
+    padding: 16px;
+}
+ 
+.aboutcard-content h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #444;
+}
+ 
+.aboutcard-content p {
+    font-size: 16px;
+    color: #666;
+}
+ 
+ 
+@media (max-width: 768px) {
+    .aboutcard {
+        flex: 1 1 100%;
+    }
+ 
+    .aboutus-container {
+        justify-content: center;
+    }
+}
+/*basket page*/
+ 
+.basket-container .item img{
+    width: 100%;
+    border: 4px solid;
+    border-color: #343434;
+}
+ 
+.basket-container .item{
+    display: grid;
+    grid-template-columns: 130px 200px 200px 200px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+}
+ 
+/*For tablets and phones*/
+@media (max-width: 768px) {
+    .basket-container .item {
+        grid-template-columns: 1fr;
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+ 
+ 
+ 
+.basket-container .quantity span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(215, 215, 215);
+    color: #5f5f5f;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 700;
+}
+ 
+.basket-container .quantity span:hover{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    color: #5f5f5f;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 4px 10px 20px rgba(41, 41, 41, 0.63);
+ 
+}
+ 
+.basket-container .quantity span:nth-child(2){
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+}
+ 
+.basket-container .item:nth-child(even){
+    background-color: #f0f0f0;
+    color: #000000;
+}
+ 
+.basket-container {
+    border: 4px solid;
+    border-color: #343434;
+    border-radius: 10px;
+    overflow: auto;
+}
+ 
+.empty-basket-message {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 30px;
+    color: #343434b9;
+}
+ 
+ 
+.check-out-button{
+    width: 160px;
+    height: 60px;
+    border: 3px solid #315cfd;
+    border-radius: 50px;
+    transition: all 0.3s;
+    cursor: pointer;
+    background: white;
+    font-size: 1.2em;
+    font-weight: 350;
+    margin: 10px;
+    margin-left: 80px;
+    margin-bottom: 100px;
+ 
+}
+ 
+.check-out-button:hover {
+    background: #315cfd;
+    color: white;
+    font-size: 1.5em;
+}
+ 
+ 
+/*order summary*/
+ 
+#order-summary {
+    margin: 20px 50px;
+}
+ 
+.order-summary-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+ 
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+ 
+.order-item:last-child {
+    border-bottom: none;
+}
+ 
+.order-item img {
+    margin-right: 10px;
+    border-radius: 8px;
+}
+ 
+.order-item-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+ 
+.order-item-quantity,
+.order-item-price {
+    font-weight: bold;
+}
+/* Checkout page */
+ 
+#checkout-head h3
+{
+    text-align: left;
+    margin-left:  40px;
+    margin-top: 40px;
+}
+ 
+ 
+.faint-line {
+    width: 100%;                      
+    border-top: 1px solid var(--primary-color);
+    margin: 20px 100;                  
+    max-width: calc(100% - 80px);    
+    margin-left: 40px;                
+}
+ 
+#checkout-body #details-info
+{
+ 
+   text-align: left;
+   margin-left: 50px;
+   margin-top:40px;
+   display: flex;
+   flex-direction: column;
+}
+ 
+ 
+checkout-head h3 {
+    text-align: left;
+    margin-left: 40px;
+    margin-top: 40px;
+    color: var(--base-color); /* Use primary text variable */
+}
+
+.faint-line {
+    width: 100%;
+    border-top: 1px solid var(--base-color);
+    margin: 20px 100;
+    max-width: calc(100% - 80px);
+    margin-left: 40px;
+}
+
+#checkout-body #details-info {
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+#checkout-body h3 {
+    text-align: left;
+    margin-left: 40px;
+    margin-top: 40px;
+    color: var(--text-color); /* Use primary text variable */
+}
+
+#details-info label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: lighter;
+    color: var(--text-color); /* Use primary text variable */
+}
+
+#checkout-body #details-info input {
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 15px;
+    width: 40%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+#checkout-body #details-info button {
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 15px;
+    cursor: pointer;
+    /*transition: background-color 0.3s ease, color 0.3s ease; */
+}
+
+#checkout-body #details-info button:hover {
+    background-color: lightgrey;
+}
